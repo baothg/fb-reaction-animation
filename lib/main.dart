@@ -442,7 +442,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
     Offset end = _newsPosition.globalPosition;
     end = Offset(MediaQuery.of(context).size.width / 2.0, end.dy);
-    end = end - Offset(0, _reactBarBotMargin + reactSize);
+    end = end - Offset(0, scaffoldKey.currentState?.appBarMaxHeight ?? 0);
 
     if (_reactSelected != -1) {
       for (var element in _reactions) {
